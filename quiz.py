@@ -8,5 +8,4 @@ def predict_quiz(answers):
     loaded_vectorizer = pickle.load(open('quiz_vectorizer.pickle', 'rb'))
     answers_scaled = loaded_vectorizer.transform([answers])
     result = model.predict(answers_scaled)
-    print(result)
-    return result
+    return result[0]
